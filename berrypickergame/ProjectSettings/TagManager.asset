@@ -53,6 +53,15 @@ TagManager:
   - name: Collision Depth
     uniqueID: 1650844165
     locked: 0
+  - name: Collision Depth2
+    uniqueID: 2057436389
+    locked: 0
+  - name: Border
+    uniqueID: 3489462025
+    locked: 0
+  - name: InFrontDecor
+    uniqueID: 1795511359
+    locked: 0
   - name: Player
     uniqueID: 206298955
     locked: 0
