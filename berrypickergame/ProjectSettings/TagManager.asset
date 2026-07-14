@@ -62,8 +62,8 @@ TagManager:
   - name: Border
     uniqueID: 3489462025
     locked: 0
-  - name: InFrontDecor
-    uniqueID: 1795511359
+  - name: Decor
+    uniqueID: 1917119513
     locked: 0
   - name: Player
     uniqueID: 206298955
@@ -71,8 +71,8 @@ TagManager:
   - name: WalkBehind
     uniqueID: 2759045847
     locked: 0
-  - name: Decor
-    uniqueID: 1917119513
+  - name: InFrontDecor
+    uniqueID: 1795511359
     locked: 0
   m_RenderingLayers:
   - Default
