@@ -56,6 +56,9 @@ TagManager:
   - name: Collision Depth2
     uniqueID: 2057436389
     locked: 0
+  - name: Collision Depth3
+    uniqueID: 2835262735
+    locked: 0
   - name: Border
     uniqueID: 3489462025
     locked: 0
