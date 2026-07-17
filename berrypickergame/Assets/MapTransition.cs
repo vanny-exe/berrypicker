@@ -16,7 +16,7 @@ public class MapTransition : MonoBehaviour
 
     private void Awake()
     {
-        confiner = FindObjectOfType<CinemachineConfiner2D>();
+        confiner = FindFirstObjectByType<CinemachineConfiner2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
