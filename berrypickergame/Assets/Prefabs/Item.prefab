@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ID: 0
+  Name: Heart Berry
 --- !u!212 &8576916762244588733
 SpriteRenderer:
   serializedVersion: 2

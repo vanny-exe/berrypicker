@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: ID
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -6776261204087580045, guid: f8201b5ce3820a34385b9e5cbd97a99b, type: 3}
+      propertyPath: Name
+      value: Fake ID
+      objectReference: {fileID: 0}
     - target: {fileID: 1613357617996498067, guid: f8201b5ce3820a34385b9e5cbd97a99b, type: 3}
       propertyPath: m_Sprite
       value: 
