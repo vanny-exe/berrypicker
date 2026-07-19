@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6776261204087580045, guid: f8201b5ce3820a34385b9e5cbd97a99b, type: 3}
+      propertyPath: ID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1613357617996498067, guid: f8201b5ce3820a34385b9e5cbd97a99b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -15,6 +19,26 @@ PrefabInstance:
     - target: {fileID: 8223105126578607662, guid: f8201b5ce3820a34385b9e5cbd97a99b, type: 3}
       propertyPath: m_Name
       value: CardItem Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223105126578607662, guid: f8201b5ce3820a34385b9e5cbd97a99b, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576916762244588733, guid: f8201b5ce3820a34385b9e5cbd97a99b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1666864527358845370, guid: d1d18ed8630ae2b44a3fe3a3cd42240d, type: 3}
+    - target: {fileID: 8576916762244588733, guid: f8201b5ce3820a34385b9e5cbd97a99b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576916762244588733, guid: f8201b5ce3820a34385b9e5cbd97a99b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576916762244588733, guid: f8201b5ce3820a34385b9e5cbd97a99b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 206298955
       objectReference: {fileID: 0}
     - target: {fileID: 8952825366628667690, guid: f8201b5ce3820a34385b9e5cbd97a99b, type: 3}
       propertyPath: m_Pivot.x
