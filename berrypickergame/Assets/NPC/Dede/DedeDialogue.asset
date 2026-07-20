@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9f19de6e33f2843a7da3dac264b241, type: 3}
+  m_Name: DedeDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Dede
+  npcPortrait: {fileID: 1239256148264131692, guid: b43a496d9ca6ad649959047f7fc1c823, type: 3}
+  dialogueLines:
+  - Choom!
+  - You look like a sky-dweller.
+  - I know one of you berry pickers.
+  - What's your handle?
+  - 'Howah! Sam? It''s me Dede. '
+  - So we do know each other.
+  - Everyone just 404'd.
+  - Is it like that up in the sky too?
+  - The garden is closed.
+  - The guy who comes to open it is gone but...
+  - 'Pearl has access, if you can get into her computer. '
+  - You fix servers, right?
+  - Just tell her you're doing a check up.
+  autoProgressLines: 01010101010101010101010101
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  choices: []

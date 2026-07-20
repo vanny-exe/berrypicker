@@ -9,4 +9,13 @@ public class SaveData
     public string mapBoundry; // the boundry name for the map
 
     public List<InventorySaveData> inventorySaveData; 
+    public List<ChestSaveData> chestSaveData;
+}
+
+[System.Serializable]
+
+public class ChestSaveData
+{
+    public string chestID;
+    public bool isOpened;
 }

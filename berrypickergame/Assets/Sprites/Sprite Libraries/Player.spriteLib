@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: berrypicker-playersprite 1_0
+      m_Hash: 542539404
+      m_Sprite: {fileID: -7458581100998704850, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7458581100998704850, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_3
+      m_Hash: 962539318
+      m_Sprite: {fileID: 3037844038801975988, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 3037844038801975988, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_6
+      m_Hash: 154524601
+      m_Sprite: {fileID: 5081208265159586421, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5081208265159586421, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_9
+      m_Hash: 428525096
+      m_Sprite: {fileID: -6542300409160642170, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6542300409160642170, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 4
+  - m_Name: Walk
+    m_Hash: 765711723
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: berrypicker-playersprite 1_0
+      m_Hash: 542539404
+      m_Sprite: {fileID: -7458581100998704850, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7458581100998704850, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_1
+      m_Hash: 391204378
+      m_Sprite: {fileID: -8755094438394012051, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8755094438394012051, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_2
+      m_Hash: 240656288
+      m_Sprite: {fileID: 2121916686573950856, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2121916686573950856, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_3
+      m_Hash: 962539318
+      m_Sprite: {fileID: 3037844038801975988, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 3037844038801975988, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_4
+      m_Hash: 658225813
+      m_Sprite: {fileID: -7992603799178351664, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7992603799178351664, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_5
+      m_Hash: 272402947
+      m_Sprite: {fileID: -3512708828500218753, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3512708828500218753, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_6
+      m_Hash: 154524601
+      m_Sprite: {fileID: 5081208265159586421, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5081208265159586421, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_7
+      m_Hash: 1043524399
+      m_Sprite: {fileID: -5480729169456574145, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5480729169456574145, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_8
+      m_Hash: 781055678
+      m_Sprite: {fileID: -2942953243698573931, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2942953243698573931, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_9
+      m_Hash: 428525096
+      m_Sprite: {fileID: -6542300409160642170, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6542300409160642170, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_10
+      m_Hash: 154040085
+      m_Sprite: {fileID: 7854310400894422254, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7854310400894422254, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    - m_Name: berrypicker-playersprite 1_11
+      m_Hash: 1042892675
+      m_Sprite: {fileID: 5752441037764969409, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5752441037764969409, guid: ec28cf219432dbd4bbc747a738eb5dc2, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 12
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639201592067127297
+  m_Version: 1
