@@ -19,6 +19,7 @@ MonoBehaviour:
   - You can see me?
   - Howah!
   autoProgressLines: 0100
+  endDialogueLines: 000001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   choices:
@@ -26,6 +27,4 @@ MonoBehaviour:
     choices:
     - Yeah!
     - Barely...
-    nextDialogueIndexes:
-    - 2
-    - 2
+    nextDialogueIndexes: 0200000002000000

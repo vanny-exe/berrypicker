@@ -9,6 +9,7 @@ public class NPCDialogue : ScriptableObject
     public Sprite npcPortrait;
     public string[] dialogueLines;
     public bool [] autoProgressLines;
+    public bool [] endDialogueLines;
     public float autoProgressDelay = 1.5f;
     public float typingSpeed = 0.05f;
 
@@ -22,5 +23,5 @@ public class DialogueChoice
 {
     public int dialogueIndex;
     public string[] choices; // choices for player response
-    public string[] nextDialogueIndexes; // where choice leads
+    public int[] nextDialogueIndexes; // where choice leads
 }
