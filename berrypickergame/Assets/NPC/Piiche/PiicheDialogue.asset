@@ -16,15 +16,24 @@ MonoBehaviour:
   npcPortrait: {fileID: 2375522674181353051, guid: 8999911833985f94d85126b72716de8f, type: 3}
   dialogueLines:
   - Aho!
-  - You can see me?
-  - Howah!
-  autoProgressLines: 0100
-  endDialogueLines: 000001
+  - Wait...you can see me?
+  - 
+  - Howah! I thought I was fading.
+  - 'I can help, but I can''t interact with the human world. '
+  - 'If you can get a ground-grown Heart Berry, I can bring everyone back. '
+  - Try going to the garden on the ground.
+  - You did it!
+  autoProgressLines: 0101000101010000
+  endDialogueLines: 0000000000000101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   choices:
   - dialogueIndex: 1
     choices:
-    - Yeah!
+    - I can!
     - Barely...
-    nextDialogueIndexes: 0200000002000000
+    nextDialogueIndexes: 0300000003000000
+    givesZaagiidiwin: 0000
+  zaagiidiwinInProgressIndex: 0
+  zaagiidiwinCompletedIndex: 0
+  zaagiidiwin: {fileID: 11400000, guid: e04349252d4da174eb594b74c045cc97, type: 2}

@@ -12,6 +12,10 @@ public class NPC : MonoBehaviour, IInteractable
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
 
+    private enum ZaagiidiwinState { NotStarted, InProgress, Completed }
+    private ZaagiidiwinState zaagiidiwinState = ZaagiidiwinState.NotStarted;
+
+
     private void Start()
 
     {
@@ -40,8 +44,28 @@ public class NPC : MonoBehaviour, IInteractable
 
     void StartDialogue()
     {
+        //sync in with quest data
+        SyncZaagiidiwinState();
+        // set dialogue line based on questSTate
+        if(zaagiidiwinState == ZaagiidiwinState.NotStarted)
+        {
+            dialogueIndex = 0;
+        }
+
+        else if(zaagiidiwinState == ZaagiidiwinState.InProgress)
+        {
+            dialogueIndex = dialogueData.zaagiidiwinInProgressIndex;
+        }
+
+        else if (zaagiidiwinState == ZaagiidiwinState.Completed)
+        {
+            dialogueIndex = dialogueData.zaagiidiwinCompletedIndex;
+        }
+
+
+
         isDialogueActive = true;
-        dialogueIndex = 0;
+        
         PauseController.SetPause(true);
 
         dialogueUI.SetNPCInfo(dialogueData.npcName, dialogueData.npcPortrait);
@@ -50,6 +74,23 @@ public class NPC : MonoBehaviour, IInteractable
         
 
         DisplayCurrentLine();
+    }
+
+    private void SyncZaagiidiwinState()
+    {
+        if(dialogueData.zaagiidiwin == null) return;
+        
+        string zaagiidiwinID = dialogueData.zaagiidiwin.zaagiidiwinID;
+
+        //future update add completing quest and handing in
+        if(ZaagiidiwinController.Instance.IsZaagiidiwinActive(zaagiidiwinID))
+        {
+            zaagiidiwinState = ZaagiidiwinState.InProgress;
+        }
+        else
+        {
+            zaagiidiwinState = ZaagiidiwinState.NotStarted;
+        }
     }
 
     void NextLine()
@@ -115,13 +156,21 @@ public class NPC : MonoBehaviour, IInteractable
         for(int i = 0; i < choice.choices.Length; i++)
         {
             int nextIndex = choice.nextDialogueIndexes[i];
-            dialogueUI.CreateChoiceButton(choice.choices[i], () => ChooseOption(nextIndex));
+            bool givesZaagiidiwin = choice.givesZaagiidiwin[i];
+            dialogueUI.CreateChoiceButton(choice.choices[i], () => ChooseOption(nextIndex, givesZaagiidiwin));
 
         }
     }
 
-    void ChooseOption(int nextIndex)
+    void ChooseOption(int nextIndex, bool givesZaagiidiwin)
     {
+
+        if (givesZaagiidiwin)
+        {
+            ZaagiidiwinController.Instance.AcceptZaagiidiwin(dialogueData.zaagiidiwin);
+            zaagiidiwinState = ZaagiidiwinState.InProgress;
+        }
+
         dialogueIndex = nextIndex;
         dialogueUI.ClearChoices();
         DisplayCurrentLine();

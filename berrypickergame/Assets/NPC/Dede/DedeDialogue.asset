@@ -28,7 +28,17 @@ MonoBehaviour:
   - 'Pearl has access, if you can get into her computer. '
   - You fix servers, right?
   - Just tell her you're doing a check up.
+  - Just tell her you're doing a check up.
   autoProgressLines: 01010101010101010101010101
+  endDialogueLines: 
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  choices: []
+  choices:
+  - dialogueIndex: 0
+    choices:
+    - Yeah.
+    nextDialogueIndexes: 
+    givesZaagiidiwin: 
+  zaagiidiwinInProgressIndex: 0
+  zaagiidiwinCompletedIndex: 0
+  zaagiidiwin: {fileID: 0}

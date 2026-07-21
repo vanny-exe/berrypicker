@@ -8,17 +8,9 @@ public class ZaagiidiwinUI : MonoBehaviour
     public GameObject zaagiidiwinEntryPrefab;
     public GameObject winTextPrefab;
 
-    public Zaagiidiwin testZaagiidiwin;
-    public int testZaagiidiwinAmount;
-    private List<ZaagiidiwinProgress> testZaagiidiwins = new();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        for(int i = 0; i < testZaagiidiwinAmount; i++)
-        {
-            testZaagiidiwins.Add(new ZaagiidiwinProgress(testZaagiidiwin));
-        }
-
         UpdateZaagiidiwinUI();
     }
    
@@ -33,7 +25,7 @@ public class ZaagiidiwinUI : MonoBehaviour
         }
 
         //build zaagiidiwin entries
-        foreach(var zaagiidiwin in testZaagiidiwins)
+        foreach(var zaagiidiwin in ZaagiidiwinController.Instance.activateZaagiidiwins)
         {
             GameObject entry = Instantiate(zaagiidiwinEntryPrefab, zaagiidiwinListContent);
             TMP_Text zaagiidiwinNameText = entry.transform.Find("ZaagiidiwinName").GetComponent<TMP_Text>();

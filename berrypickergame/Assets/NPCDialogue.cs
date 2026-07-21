@@ -14,6 +14,10 @@ public class NPCDialogue : ScriptableObject
     public float typingSpeed = 0.05f;
 
     public DialogueChoice[] choices;
+
+    public int zaagiidiwinInProgressIndex;
+    public int zaagiidiwinCompletedIndex;
+    public Zaagiidiwin zaagiidiwin;
     
 }
 
@@ -24,4 +28,5 @@ public class DialogueChoice
     public int dialogueIndex;
     public string[] choices; // choices for player response
     public int[] nextDialogueIndexes; // where choice leads
+    public bool[] givesZaagiidiwin; // if choice gives quest
 }

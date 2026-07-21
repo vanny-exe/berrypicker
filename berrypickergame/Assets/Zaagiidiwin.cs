@@ -7,16 +7,16 @@ using UnityEngine;
 
 public class Zaagiidiwin : ScriptableObject
 {
-    public string questID;
-    public string questName;
+    public string zaagiidiwinID;
+    public string zaagiidiwinName;
     public string description;
     public List<ZaagiidiwinWin> win;
     // called when scriptable obj is edited
     private void OnValidate()
     {
-        if(string.IsNullOrEmpty(questID))
+        if(string.IsNullOrEmpty(zaagiidiwinID))
         {
-            questID = questName + Guid.NewGuid().ToString();
+            zaagiidiwinID = zaagiidiwinName + Guid.NewGuid().ToString();
         }
     }
 
@@ -27,16 +27,16 @@ public class Zaagiidiwin : ScriptableObject
 
     public class ZaagiidiwinWin
     {
-        public string objectiveID; // match with itemID that you need to collect
+        public string winID; // match with itemID that you need to collect
         public string description;
-        public ZaagiType zaagi;
+        public Zaagi zaagi;
         public int requiredAmount;
         public int currentAmount;
 
         public bool IsCompleted => currentAmount >= requiredAmount;
     }
 
-    public enum ZaagiType { CollectItem, TalkNPC, ReachLocation, Custom}
+    public enum Zaagi { CollectItem, TalkNPC, ReachLocation, Custom}
 
     [System.Serializable]
     public class ZaagiidiwinProgress
@@ -54,7 +54,7 @@ public class Zaagiidiwin : ScriptableObject
             {
                 win.Add(new ZaagiidiwinWin
                 {
-                    objectiveID = obj.objectiveID,
+                    winID = obj.winID,
                     description = obj.description,
                     zaagi = obj.zaagi,
                     requiredAmount = obj.requiredAmount,
@@ -65,5 +65,5 @@ public class Zaagiidiwin : ScriptableObject
 
         public bool isCompleted => win.TrueForAll(o => o.IsCompleted);
 
-        public string QuestID => zaagiidiwin.questID;
+        public string ZaagiidiwinID => zaagiidiwin.zaagiidiwinID;
     }
