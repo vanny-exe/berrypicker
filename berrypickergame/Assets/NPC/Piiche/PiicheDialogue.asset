@@ -19,12 +19,31 @@ MonoBehaviour:
   - Wait...you can see me?
   - 
   - Howah! I thought I was fading.
-  - 'I can help, but I can''t interact with the human world. '
+  - 
+  - Oh.
+  - I wonder... wait, where are the other humans?
+  - 
+  - Just like the other manitou... I knew it.
+  - 
+  - I know how to help!
+  - 'But I can''t interact with the human world. Not like this. '
+  - You can though! Don't worry. It's a job for a berry picker likeyou.
   - 'If you can get a ground-grown Heart Berry, I can bring everyone back. '
-  - Try going to the garden on the ground.
+  - 
+  - Yup. from the ground. You ever been?
+  - 
+  - A berry picker who'se never been to the ground...
+  - 'Well. No matter. There''s no one else. '
+  - 'Go to the ground and come back with a Heart Berry.  '
+  - 'I believe in you! '
+  - 
+  - If you don't bring back a Heart Berry, I won't be able to help you.
+  - Elevators bring people down, right?
+  - 
   - You did it!
-  autoProgressLines: 0101000101010000
-  endDialogueLines: 0000000000000101
+  - 
+  autoProgressLines: 010100010001010001000101010100010001010101000101000100
+  endDialogueLines: 000000000000000000000000000000000000000000010101000101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   choices:
@@ -34,6 +53,38 @@ MonoBehaviour:
     - Barely...
     nextDialogueIndexes: 0300000003000000
     givesZaagiidiwin: 0000
-  zaagiidiwinInProgressIndex: 0
-  zaagiidiwinCompletedIndex: 0
+  - dialogueIndex: 3
+    choices:
+    - Well...
+    - You are.
+    nextDialogueIndexes: 0500000005000000
+    givesZaagiidiwin: 0000
+  - dialogueIndex: 6
+    choices:
+    - I don't know.
+    nextDialogueIndexes: 08000000
+    givesZaagiidiwin: 00
+  - dialogueIndex: 8
+    choices:
+    - 'Huh? '
+    nextDialogueIndexes: 0a000000
+    givesZaagiidiwin: 00
+  - dialogueIndex: 13
+    choices:
+    - The ground?
+    nextDialogueIndexes: 0f000000
+    givesZaagiidiwin: 00
+  - dialogueIndex: 15
+    choices:
+    - Well...
+    - Not really.
+    nextDialogueIndexes: 1100000011000000
+    givesZaagiidiwin: 0000
+  - dialogueIndex: 20
+    choices:
+    - I'll do it!
+    nextDialogueIndexes: 15000000
+    givesZaagiidiwin: 01
+  zaagiidiwinInProgressIndex: 22
+  zaagiidiwinCompletedIndex: 25
   zaagiidiwin: {fileID: 11400000, guid: e04349252d4da174eb594b74c045cc97, type: 2}
