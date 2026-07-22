@@ -7,5 +7,6 @@ public class InventorySaveData
 {
     public int itemID;
     public int slotIndex; // The index of the slot in the inventory where the item is stored
+    public int quantity = 1;
     
 }

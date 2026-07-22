@@ -83,7 +83,12 @@ public class NPC : MonoBehaviour, IInteractable
         string zaagiidiwinID = dialogueData.zaagiidiwin.zaagiidiwinID;
 
         //future update add completing quest and handing in
-        if(ZaagiidiwinController.Instance.IsZaagiidiwinActive(zaagiidiwinID))
+        if(ZaagiidiwinController.Instance.IsZaagiidiwinCompleted(zaagiidiwinID) || ZaagiidiwinController.Instance.IsZaagiidiwinHandedIn(zaagiidiwinID))
+        {
+            zaagiidiwinState = ZaagiidiwinState.Completed;
+        }
+
+        else if(ZaagiidiwinController.Instance.IsZaagiidiwinActive(zaagiidiwinID))
         {
             zaagiidiwinState = ZaagiidiwinState.InProgress;
         }
@@ -91,6 +96,7 @@ public class NPC : MonoBehaviour, IInteractable
         {
             zaagiidiwinState = ZaagiidiwinState.NotStarted;
         }
+
     }
 
     void NextLine()
@@ -183,11 +189,23 @@ public class NPC : MonoBehaviour, IInteractable
     }
     public void EndDialogue()
     {
+
+        if(zaagiidiwinState == ZaagiidiwinState.Completed && !ZaagiidiwinController.Instance.IsZaagiidiwinHandedIn(dialogueData.zaagiidiwin.zaagiidiwinID))
+        {
+            HandleZaagiidiwinCompletion(dialogueData.zaagiidiwin);
+        }
+
         StopAllCoroutines();
         isDialogueActive = false;
         dialogueUI.SetDialogueText("");
         dialogueUI.ShowDialogueUI(false);
         PauseController.SetPause(false) ;
     
+    }
+
+    void HandleZaagiidiwinCompletion(Zaagiidiwin zaagiidiwin)
+    {
+        RewardsController.Instance.GiveZaagiIdi(zaagiidiwin);
+        ZaagiidiwinController.Instance.HandInZaagiidiwin(zaagiidiwin.zaagiidiwinID);
     }
 }

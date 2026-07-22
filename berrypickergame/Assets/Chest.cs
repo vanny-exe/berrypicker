@@ -35,7 +35,7 @@ public bool CanInteract()
         //drop item
         if(itemPrefab)
         {
-            GameObject droppedItem = Instantiate(itemPrefab, transform.position + new Vector3(0,-0.5f,0), Quaternion.identity);
+            GameObject droppedItem  = Instantiate(itemPrefab, transform.position + new Vector3(0,-0.5f,0), Quaternion.identity);
 
         }
     }

@@ -7,10 +7,12 @@ using UnityEngine;
 
 public class Zaagiidiwin : ScriptableObject
 {
-    public string zaagiidiwinID;
-    public string zaagiidiwinName;
-    public string description;
-    public List<ZaagiidiwinWin> win;
+    public string zaagiidiwinID; // questID
+    public string zaagiidiwinName; // questName
+    public string description; // 
+    public List<ZaagiidiwinWin> win; // <QuestObjective> objective
+    public List<ZaagiIdi> idi; //QuestReward
+    
     // called when scriptable obj is edited
     private void OnValidate()
     {
@@ -29,7 +31,7 @@ public class Zaagiidiwin : ScriptableObject
     {
         public string winID; // match with itemID that you need to collect
         public string description;
-        public Zaagi zaagi;
+        public Zaagi zaagi; // ObjectiveType type
         public int requiredAmount;
         public int currentAmount;
 
@@ -67,3 +69,14 @@ public class Zaagiidiwin : ScriptableObject
 
         public string ZaagiidiwinID => zaagiidiwin.zaagiidiwinID;
     }
+
+[System.Serializable]
+
+public class ZaagiIdi  // QuestReward
+{
+    public Idi idi; //RewardType type
+    public int idiID; // rewardID
+    public int amount = 1;
+}
+
+public enum Idi { Item, Restore, Custom} //RewardType
