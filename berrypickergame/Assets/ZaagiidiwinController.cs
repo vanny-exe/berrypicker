@@ -38,7 +38,7 @@ public class ZaagiidiwinController : MonoBehaviour
         {
             foreach(ZaagiidiwinWin zaagiidiwinWin in zaagiidiwin.win)
             {
-                if(zaagiidiwinWin.zaagi != Zaagi.CollectItem) continue;
+                if(zaagiidiwinWin.zaag != Zaag.CollectItem) continue;
                 if(!int.TryParse(zaagiidiwinWin.winID, out int itemID)) continue;
 
                 int newAmount = itemCounts.TryGetValue(itemID, out int count) ? Mathf.Min(count, zaagiidiwinWin.requiredAmount) : 0;
@@ -91,7 +91,7 @@ public class ZaagiidiwinController : MonoBehaviour
         //item requirements from objective
         foreach(ZaagiidiwinWin win in zaagiidiwin.win)
         {
-            if(win.zaagi == Zaagi.CollectItem && int.TryParse(win.winID, out int itemID))
+            if(win.zaag == Zaag.CollectItem && int.TryParse(win.winID, out int itemID))
             {
                 requiredItems[itemID] = win.requiredAmount;
             }
