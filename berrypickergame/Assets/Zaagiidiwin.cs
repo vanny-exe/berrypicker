@@ -11,7 +11,7 @@ public class Zaagiidiwin : ScriptableObject
     public string zaagiidiwinName; // questName
     public string description; // 
     public List<ZaagiidiwinWin> win; // <QuestObjective> objective
-    public List<ZaagIdi> idi; //QuestReward
+    public List<ZaagiIdi> idi; //QuestReward
     
     // called when scriptable obj is edited
     private void OnValidate()
@@ -31,14 +31,14 @@ public class Zaagiidiwin : ScriptableObject
     {
         public string winID; // match with itemID that you need to collect
         public string description;
-        public Zaag zaag; // ObjectiveType type
+        public Zaagi zaagi; // ObjectiveType type
         public int requiredAmount;
         public int currentAmount;
 
         public bool IsCompleted => currentAmount >= requiredAmount;
     }
 
-    public enum Zaag { CollectItem, TalkNPC, ReachLocation, Custom}
+    public enum Zaagi { CollectItem, TalkNPC, ReachLocation, Custom}
 
     [System.Serializable]
     public class ZaagiidiwinProgress
@@ -58,7 +58,7 @@ public class Zaagiidiwin : ScriptableObject
                 {
                     winID = obj.winID,
                     description = obj.description,
-                    zaag = obj.zaag,
+                    zaagi = obj.zaagi,
                     requiredAmount = obj.requiredAmount,
                     currentAmount = 0
                 });
@@ -72,7 +72,7 @@ public class Zaagiidiwin : ScriptableObject
 
 [System.Serializable]
 
-public class ZaagIdi  // QuestReward
+public class ZaagiIdi  // QuestReward
 {
     public Idi idi; //RewardType type
     public int idiID; // rewardID
