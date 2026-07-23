@@ -15,5 +15,13 @@ MonoBehaviour:
   zaagiidiwinID: F57de2d54-a219-4784-9be6-b7ea1c4acf87
   zaagiidiwinName: 
   description: 
-  win: []
-  idi: []
+  win:
+  - winID: 
+    description: 
+    zaagi: 1
+    requiredAmount: 0
+    currentAmount: 0
+  idi:
+  - idi: 0
+    idiID: 0
+    amount: 0

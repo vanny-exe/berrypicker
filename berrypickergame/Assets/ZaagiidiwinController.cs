@@ -8,7 +8,7 @@ public class ZaagiidiwinController : MonoBehaviour
     public List<ZaagiidiwinProgress> activateZaagiidiwins = new();
     private ZaagiidiwinUI zaagiidiwinUI;
 
-    public List<string> Caus = new();
+    public List<string> CausZaagiidiwinIDs = new(); // completed quests IDs
 
     private void Awake()
     {
@@ -20,6 +20,7 @@ public class ZaagiidiwinController : MonoBehaviour
 
     }
 
+    // accepting quest 
     public void AcceptZaagiidiwin(Zaagiidiwin zaagiidiwin)
     {
         if(IsZaagiidiwinActive(zaagiidiwin.zaagiidiwinID)) return;
@@ -29,14 +30,16 @@ public class ZaagiidiwinController : MonoBehaviour
         zaagiidiwinUI.UpdateZaagiidiwinUI();
     } 
 
+    
     public bool IsZaagiidiwinActive(string zaagiidiwinID) => activateZaagiidiwins.Exists(q => q.ZaagiidiwinID == zaagiidiwinID);
 
+    // for item quests, checks inventory to see if player has all items
     public void CheckInventoryForZaagiidiwins()
     {
         Dictionary<int, int> itemCounts = InventoryController.Instance.GetItemCounts();
         foreach(ZaagiidiwinProgress zaagiidiwin in activateZaagiidiwins)
         {
-            foreach(ZaagiidiwinWin zaagiidiwinWin in zaagiidiwin.win)
+            foreach(Win zaagiidiwinWin in zaagiidiwin.win)
             {
                 if(zaagiidiwinWin.zaagi != Zaagi.CollectItem) continue;
                 if(!int.TryParse(zaagiidiwinWin.winID, out int itemID)) continue;
@@ -52,14 +55,15 @@ public class ZaagiidiwinController : MonoBehaviour
 
         zaagiidiwinUI.UpdateZaagiidiwinUI();
     }
-
+    // checks to see if the quest is completed
     public bool IsZaagiidiwinCompleted(string zaagiidiwinID)
     {
         ZaagiidiwinProgress zaagiidiwin = activateZaagiidiwins.Find(q => q.ZaagiidiwinID == zaagiidiwinID);
         return zaagiidiwin != null && zaagiidiwin.win.TrueForAll(o => o.IsCompleted);
     }
 
-    public void HandInZaagiidiwin(string zaagiidiwinID)
+    // allows player to complete the quest and removes the quest items and the quest from the ui 
+    public void Caus(string zaagiidiwinID) // hand in quest, old: public void HandInQuest(string questID)
     {
         //remove items
        if(!RemoveRequiredItemsFromInventory(zaagiidiwinID))
@@ -71,15 +75,16 @@ public class ZaagiidiwinController : MonoBehaviour
         ZaagiidiwinProgress zaagiidiwin = activateZaagiidiwins.Find(q => q.ZaagiidiwinID == zaagiidiwinID);
         if(zaagiidiwin != null)
         {
-            Caus.Add(zaagiidiwinID);
+            CausZaagiidiwinIDs.Add(zaagiidiwinID);
             activateZaagiidiwins.Remove(zaagiidiwin);
             zaagiidiwinUI.UpdateZaagiidiwinUI();
         }
     }
 
-    public bool IsZaagiidiwinHandedIn(string zaagiidiwinID)
+    // checks to see if the quest handed in
+    public bool IsZaagiidiwinCaus(string zaagiidiwinID)
     {
-        return Caus.Contains(zaagiidiwinID);
+        return CausZaagiidiwinIDs.Contains(zaagiidiwinID);
     }
     public bool RemoveRequiredItemsFromInventory(string zaagiidiwinID)
     {
@@ -89,7 +94,7 @@ public class ZaagiidiwinController : MonoBehaviour
         Dictionary<int, int> requiredItems = new();
 
         //item requirements from objective
-        foreach(ZaagiidiwinWin win in zaagiidiwin.win)
+        foreach(Win win in zaagiidiwin.win)
         {
             if(win.zaagi == Zaagi.CollectItem && int.TryParse(win.winID, out int itemID))
             {

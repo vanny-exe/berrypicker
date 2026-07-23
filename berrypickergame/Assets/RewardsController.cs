@@ -42,7 +42,7 @@ public class RewardsController : MonoBehaviour
         {
             if(!InventoryController.Instance.AddItem(itemPrefab))
             {
-                GameObject dropITem = Instantiate(itemPrefab, transform.position + Vector3.down, Quaternion.identity);
+                GameObject dropItem = Instantiate(itemPrefab, transform.position + Vector3.down, Quaternion.identity);
             }
             else
             {

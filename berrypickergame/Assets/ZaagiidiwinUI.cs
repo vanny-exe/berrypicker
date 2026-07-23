@@ -24,7 +24,7 @@ public class ZaagiidiwinUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        //build zaagiidiwin entries
+        //build zaagiidiwin (quest) entries
         foreach(var zaagiidiwin in ZaagiidiwinController.Instance.activateZaagiidiwins)
         {
             GameObject entry = Instantiate(zaagiidiwinEntryPrefab, zaagiidiwinListContent);

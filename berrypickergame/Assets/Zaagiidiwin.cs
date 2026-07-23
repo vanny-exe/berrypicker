@@ -7,11 +7,11 @@ using UnityEngine;
 
 public class Zaagiidiwin : ScriptableObject
 {
-    public string zaagiidiwinID; // questID
-    public string zaagiidiwinName; // questName
-    public string description; // 
-    public List<ZaagiidiwinWin> win; // <QuestObjective> objective
-    public List<ZaagiIdi> idi; //QuestReward
+    public string zaagiidiwinID; // questID for saving purposes
+    public string zaagiidiwinName; // questName that appears in the game
+    public string description; // describes quest - for developper, player will not see
+    public List<Win> win; // <QuestObjective> objective, 
+    public List<ZaagiIdi> idi; //QuestReward, combining morphemes for continuity
     
     // called when scriptable obj is edited
     private void OnValidate()
@@ -20,14 +20,12 @@ public class Zaagiidiwin : ScriptableObject
         {
             zaagiidiwinID = zaagiidiwinName + Guid.NewGuid().ToString();
         }
-    }
-
-   
+    }  
 }
 
  [System.Serializable]
 
-    public class ZaagiidiwinWin
+    public class Win // quest objective
     {
         public string winID; // match with itemID that you need to collect
         public string description;
@@ -44,17 +42,17 @@ public class Zaagiidiwin : ScriptableObject
     public class ZaagiidiwinProgress
     {
         public Zaagiidiwin zaagiidiwin;
-        public List<ZaagiidiwinWin> win;
+        public List<Win> win;
 
         public ZaagiidiwinProgress(Zaagiidiwin zaagiidiwin)
         {
             this.zaagiidiwin = zaagiidiwin;
-            win = new List<ZaagiidiwinWin>();
+            win = new List<Win>();
 
             //deep copy mto avoid modifying original
             foreach(var obj in zaagiidiwin.win)
             {
-                win.Add(new ZaagiidiwinWin
+                win.Add(new Win
                 {
                     winID = obj.winID,
                     description = obj.description,
@@ -72,11 +70,11 @@ public class Zaagiidiwin : ScriptableObject
 
 [System.Serializable]
 
-public class ZaagiIdi  // QuestReward
+public class ZaagiIdi  // QuestReward, need to combine morphemes, cnanot have Idi alone (will interfere with Idi idi)
 {
     public Idi idi; //RewardType type
-    public int idiID; // rewardID
+    public int idiID; // rewardID, unique
     public int amount = 1;
 }
 
-public enum Idi { Item, Restore, Custom} //RewardType
+public enum Idi { Item, Restore, Custom} //RewardType that appears in Unity Editor 

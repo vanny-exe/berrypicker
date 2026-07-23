@@ -11,7 +11,7 @@ public class SaveData
     public List<InventorySaveData> inventorySaveData; 
     public List<ChestSaveData> chestSaveData;
     public List<ZaagiidiwinProgress> zaagiidiwinProgressData;
-    public List<string> Caus;
+    public List<string> CausZaagiidiwinIDs;
 }
 
 [System.Serializable]

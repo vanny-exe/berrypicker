@@ -41,7 +41,7 @@ public class SaveController : MonoBehaviour
             inventorySaveData = inventoryController.GetInventoryItems(), 
             chestSaveData = GetChestsState(),
             zaagiidiwinProgressData = ZaagiidiwinController.Instance.activateZaagiidiwins,
-            Caus = ZaagiidiwinController.Instance.Caus
+            CausZaagiidiwinIDs = ZaagiidiwinController.Instance.CausZaagiidiwinIDs
            
             
         };
@@ -78,7 +78,7 @@ public class SaveController : MonoBehaviour
             LoadChestStates(saveData.chestSaveData);
 
             ZaagiidiwinController.Instance.LoadZaagiidiwinProgress(saveData.zaagiidiwinProgressData);
-            ZaagiidiwinController.Instance.Caus = saveData.Caus;
+            ZaagiidiwinController.Instance.CausZaagiidiwinIDs = saveData.CausZaagiidiwinIDs;
 
             
         }

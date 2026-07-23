@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43102e7f3c49b1d4782a1e288f727165, type: 3}
-  m_Name: CollectHeartberry
+  m_Name: Bring Martha and the Civilians Back!
   m_EditorClassIdentifier: Assembly-CSharp::Zaagiidiwin
   zaagiidiwinID: cae639a0-d0fd-43d9-a524-fe350a260fa6
-  zaagiidiwinName: 
-  description: Bring Martha and the Civilians Back!
+  zaagiidiwinName: Collect Heart Berry
+  description: Find Heart Berry to Restore Piiche's Form
   win:
-  - winID: 
-    description: Collect a Heart Berry for Piiche
+  - winID: 1
+    description: Find a Heart Berry to Restore Piiche's Form
     zaagi: 0
     requiredAmount: 1
     currentAmount: 0
+  idi:
+  - idi: 1
+    idiID: 0
+    amount: 1

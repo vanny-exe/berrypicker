@@ -83,7 +83,7 @@ public class NPC : MonoBehaviour, IInteractable
         string zaagiidiwinID = dialogueData.zaagiidiwin.zaagiidiwinID;
 
         //future update add completing quest and handing in
-        if(ZaagiidiwinController.Instance.IsZaagiidiwinCompleted(zaagiidiwinID) || ZaagiidiwinController.Instance.IsZaagiidiwinHandedIn(zaagiidiwinID))
+        if(ZaagiidiwinController.Instance.IsZaagiidiwinCompleted(zaagiidiwinID) || ZaagiidiwinController.Instance.IsZaagiidiwinCaus(zaagiidiwinID))
         {
             zaagiidiwinState = ZaagiidiwinState.Completed;
         }
@@ -190,7 +190,7 @@ public class NPC : MonoBehaviour, IInteractable
     public void EndDialogue()
     {
 
-        if(zaagiidiwinState == ZaagiidiwinState.Completed && !ZaagiidiwinController.Instance.IsZaagiidiwinHandedIn(dialogueData.zaagiidiwin.zaagiidiwinID))
+        if(zaagiidiwinState == ZaagiidiwinState.Completed && !ZaagiidiwinController.Instance.IsZaagiidiwinCaus(dialogueData.zaagiidiwin.zaagiidiwinID))
         {
             HandleZaagiidiwinCompletion(dialogueData.zaagiidiwin);
         }
@@ -206,6 +206,6 @@ public class NPC : MonoBehaviour, IInteractable
     void HandleZaagiidiwinCompletion(Zaagiidiwin zaagiidiwin)
     {
         RewardsController.Instance.GiveZaagiIdi(zaagiidiwin);
-        ZaagiidiwinController.Instance.HandInZaagiidiwin(zaagiidiwin.zaagiidiwinID);
+        ZaagiidiwinController.Instance.Caus(zaagiidiwin.zaagiidiwinID);
     }
 }
